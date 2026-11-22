@@ -1,0 +1,241 @@
+:root {
+  color-scheme: dark;
+  --bg: #05070d;
+  --panel: rgba(148, 163, 184, 0.06);
+  --border: rgba(148, 163, 184, 0.16);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #34d399;
+  --accent-2: #22d3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(52, 211, 153, 0.1), transparent 60%),
+    radial-gradient(900px 500px at 100% 110%, rgba(34, 211, 238, 0.08), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+header h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header p {
+  margin: 6px 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dropzone {
+  border: 1.5px dashed var(--border);
+  border-radius: 16px;
+  padding: 44px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--accent);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.dropzone-icon {
+  font-size: 40px;
+}
+
+.dropzone-title {
+  margin: 10px 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dropzone-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.panel {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.count {
+  display: inline-block;
+  min-width: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.16);
+  color: var(--accent);
+  font-size: 12px;
+  text-align: center;
+}
+
+.file-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.file-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.file-list li:first-child {
+  border-top: none;
+}
+
+.file-name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.file-path {
+  flex: 1;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  direction: rtl;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.output-dir {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.output-dir code {
+  color: var(--text);
+  background: rgba(148, 163, 184, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+button.primary {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #06281c;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+}
+
+button.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.link {
+  background: none;
+  border: 0;
+  color: var(--accent-2);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.summary {
+  margin: 6px 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ok {
+  color: var(--accent);
+}
+
+.fail {
+  color: #f87171;
+}
+
+footer {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}

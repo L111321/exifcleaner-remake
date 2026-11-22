@@ -1,0 +1,28 @@
+{
+  "name": "exifcleaner-remake",
+  "version": "1.0.0",
+  "private": true,
+  "description": "图片元数据清理工具 — Electron + React 重制版（核心解析零依赖）",
+  "main": "dist/main/main.cjs",
+  "scripts": {
+    "build": "node scripts/build-main.mjs && vite build",
+    "build:main": "node scripts/build-main.mjs",
+    "test": "node scripts/build-main.mjs && node --test test/metadata.test.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.renderer.json",
+    "start": "npm run build && electron ."
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.0",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}
